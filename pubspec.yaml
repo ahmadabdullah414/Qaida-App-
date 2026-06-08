@@ -1,0 +1,51 @@
+﻿name: qaida_app
+description: Qaida - Learn to Read the Quran
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  just_audio: ^0.9.36
+  shared_preferences: ^2.2.2
+  provider: ^6.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/audio/
+    - assets/images/
+
+  fonts:
+    - family: AlMajeed
+      fonts:
+        - asset: assets/fonts/al_majeed.ttf
+    - family: AlMushaf
+      fonts:
+        - asset: assets/fonts/al_mushaf.ttf
+    - family: Comfortaa
+      fonts:
+        - asset: assets/fonts/comfortaa.ttf
+    - family: MuhammadiQuranic
+      fonts:
+        - asset: assets/fonts/muhammadi_quranic.ttf
+    - family: MuhammadMusaAlBazi
+      fonts:
+        - asset: assets/fonts/muhammadmusaalbazi_regular.ttf
+    - family: Naskh
+      fonts:
+        - asset: assets/fonts/naskh.ttf
+    - family: QuranFont
+      fonts:
+        - asset: assets/fonts/quran_font.ttf
+
+
