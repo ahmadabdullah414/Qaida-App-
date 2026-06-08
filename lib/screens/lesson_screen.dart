@@ -133,9 +133,19 @@ class _LessonScreenState extends State<LessonScreen> {
       appBar: AppBar(
         backgroundColor: _lesson.backgroundColor,
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: _lesson.textColor),
-          onPressed: () => Navigator.of(context).pop(),
+        leading: GestureDetector(
+          onTap: () => Navigator.of(context).pop(),
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Text(
+              '←',
+              style: TextStyle(
+                fontSize: 22,
+                color: _lesson.textColor,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
         ),
         title: Text(
           _lesson.name,
@@ -274,11 +284,42 @@ class _LessonScreenState extends State<LessonScreen> {
     return SingleChildScrollView(
       child: Padding(
         padding: r.gridPadding,
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: cols,
+              crossAxisSpacing: 6,
+              mainAxisSpacing: 6,
+              childAspectRatio: r.charAspect,
+            ),
+            itemCount: items.length,
+            itemBuilder: (ctx, i) => CharacterCard(
+              item: items[i],
+              isSelected: _selChar == i,
+              onTap: () {
+                setState(() { _clearAll(); _selChar = i; });
+                _audio.play(items[i].audioFile);
+              },
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _charGridWidget(List<CharacterItem> items, R r) {
+    return Padding(
+      padding: r.gridPadding,
+      child: Directionality(
+        textDirection: TextDirection.rtl,
         child: GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: cols,
+            crossAxisCount: r.charCols(),
             crossAxisSpacing: 6,
             mainAxisSpacing: 6,
             childAspectRatio: r.charAspect,
@@ -297,52 +338,30 @@ class _LessonScreenState extends State<LessonScreen> {
     );
   }
 
-  Widget _charGridWidget(List<CharacterItem> items, R r) {
-    return Padding(
-      padding: r.gridPadding,
-      child: GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: r.charCols(),
-          crossAxisSpacing: 6,
-          mainAxisSpacing: 6,
-          childAspectRatio: r.charAspect,
-        ),
-        itemCount: items.length,
-        itemBuilder: (ctx, i) => CharacterCard(
-          item: items[i],
-          isSelected: _selChar == i,
-          onTap: () {
-            setState(() { _clearAll(); _selChar = i; });
-            _audio.play(items[i].audioFile);
-          },
-        ),
-      ),
-    );
-  }
-
   Widget _wordGridWidget(List<CharacterItem> items, R r) {
     return Padding(
       padding: r.gridPadding,
-      child: GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: r.wordCols(),
-          crossAxisSpacing: 6,
-          mainAxisSpacing: 6,
-          childAspectRatio: r.wordAspect,
-        ),
-        itemCount: items.length,
-        itemBuilder: (ctx, i) => CharacterCard(
-          item: items[i],
-          isWord: true,
-          isSelected: _selWord == i,
-          onTap: () {
-            setState(() { _clearAll(); _selWord = i; });
-            _audio.play(items[i].audioFile);
-          },
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: r.wordCols(),
+            crossAxisSpacing: 6,
+            mainAxisSpacing: 6,
+            childAspectRatio: r.wordAspect,
+          ),
+          itemCount: items.length,
+          itemBuilder: (ctx, i) => CharacterCard(
+            item: items[i],
+            isWord: true,
+            isSelected: _selWord == i,
+            onTap: () {
+              setState(() { _clearAll(); _selWord = i; });
+              _audio.play(items[i].audioFile);
+            },
+          ),
         ),
       ),
     );
@@ -358,21 +377,24 @@ class _LessonScreenState extends State<LessonScreen> {
     return SingleChildScrollView(
       child: Padding(
         padding: r.gridPadding,
-        child: GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: cols,
-            crossAxisSpacing: 6,
-            mainAxisSpacing: 6,
-            childAspectRatio: r.wordAspect,
-          ),
-          itemCount: items.length,
-          itemBuilder: (ctx, i) => CharacterCard(
-            item: items[i],
-            isWord: true,
-            isSelected: selectedIndex == i,
-            onTap: () => onTap(i),
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: cols,
+              crossAxisSpacing: 6,
+              mainAxisSpacing: 6,
+              childAspectRatio: r.wordAspect,
+            ),
+            itemCount: items.length,
+            itemBuilder: (ctx, i) => CharacterCard(
+              item: items[i],
+              isWord: true,
+              isSelected: selectedIndex == i,
+              onTap: () => onTap(i),
+            ),
           ),
         ),
       ),

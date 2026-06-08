@@ -30,15 +30,8 @@ class _IndexScreenState extends State<IndexScreen> {
   Widget build(BuildContext context) {
     final screenW = MediaQuery.of(context).size.width;
 
-    // Determine columns based on screen width
-    int columns;
-    if (screenW >= 1200) {
-      columns = 3;
-    } else if (screenW >= 600) {
-      columns = 2;
-    } else {
-      columns = 1;
-    }
+    // Always single column — keeps layout clean on all screen sizes
+    const int columns = 1;
 
     // Max content width on very wide screens
     final maxWidth = screenW >= 960 ? 960.0 : screenW;
@@ -79,12 +72,11 @@ class _IndexScreenState extends State<IndexScreen> {
     );
   }
 
-  /// Keep tiles at roughly 72 logical pixels tall regardless of column count.
+  /// Single-column tiles: width / fixed-height gives the aspect ratio.
   double _tileAspect(double screenW, int columns) {
-    final availableW = (screenW >= 960 ? 960.0 : screenW) - 24; // minus padding
-    final tileW = (availableW - (columns - 1) * 10) / columns;
+    final availableW = (screenW >= 960 ? 960.0 : screenW) - 24;
     const tileH = 72.0;
-    return tileW / tileH;
+    return availableW / tileH;
   }
 
   /// Splits "20 Part(2)" → "20" on top, "Part(2)" below inside the badge circle.

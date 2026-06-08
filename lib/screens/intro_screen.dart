@@ -58,9 +58,19 @@ class _IntroScreenState extends State<IntroScreen> {
       appBar: AppBar(
         backgroundColor: _lesson.backgroundColor,
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: _lesson.textColor),
-          onPressed: () => Navigator.of(context).pop(),
+        leading: GestureDetector(
+          onTap: () => Navigator.of(context).pop(),
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Text(
+              '←',
+              style: TextStyle(
+                fontSize: 22,
+                color: _lesson.textColor,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
         ),
         title: Text(
           _lesson.name,
@@ -90,66 +100,95 @@ class _IntroScreenState extends State<IntroScreen> {
                         itemCount: totalPages,
                         itemBuilder: (context, index) {
                           final section = sections[index];
-                          return SingleChildScrollView(
-                            padding: EdgeInsets.all(r.isDesktop ? 40 : 24),
-                            child: Column(
-                              children: [
-                                SizedBox(height: r.isDesktop ? 24 : 16),
+                          return LayoutBuilder(
+                            builder: (ctx, constraints) => SingleChildScrollView(
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                    minHeight: constraints.maxHeight),
+                                child: IntrinsicHeight(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(height: r.isDesktop ? 24 : 16),
 
-                                // Image (optional)
-                                if (section.imageFile != null) ...[
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(12),
-                                    child: Image.asset(
-                                      'assets/images/${section.imageFile}',
-                                      height: r.introImageHeight,
-                                      fit: BoxFit.contain,
-                                      errorBuilder: (_, __, ___) =>
-                                          const SizedBox.shrink(),
-                                    ),
-                                  ),
-                                  SizedBox(height: r.isDesktop ? 28 : 20),
-                                ],
+                                      // Image (optional)
+                                      if (section.imageFile != null) ...[
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                          child: Image.asset(
+                                            'assets/images/${section.imageFile}',
+                                            height: r.introImageHeight,
+                                            fit: BoxFit.contain,
+                                            errorBuilder: (_, __, ___) =>
+                                                const SizedBox.shrink(),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                            height: r.isDesktop ? 24 : 16),
+                                      ],
 
-                                // Text bubble
-                                Container(
-                                  padding: EdgeInsets.all(r.isDesktop ? 28 : 20),
-                                  decoration: BoxDecoration(
-                                    color: Colors.black.withOpacity(0.1),
-                                    borderRadius: BorderRadius.circular(16),
-                                  ),
-                                  child: Text(
-                                    section.text,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: 'Comfortaa',
-                                      fontSize: r.introTextSize,
-                                      color: _lesson.textColor,
-                                      height: 1.7,
-                                    ),
+                                      // Text bubble
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal:
+                                                r.isDesktop ? 40 : 24),
+                                        child: Container(
+                                          width: double.infinity,
+                                          padding: EdgeInsets.all(
+                                              r.isDesktop ? 28 : 20),
+                                          decoration: BoxDecoration(
+                                            color: Colors.black
+                                                .withOpacity(0.1),
+                                            borderRadius:
+                                                BorderRadius.circular(16),
+                                          ),
+                                          child: Text(
+                                            section.text,
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontFamily: 'Comfortaa',
+                                              fontSize: r.introTextSize,
+                                              color: _lesson.textColor,
+                                              height: 1.7,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+
+                                      SizedBox(height: r.isDesktop ? 24 : 16),
+
+                                      // Speaker button
+                                      GestureDetector(
+                                        onTap: () =>
+                                            _audio.play(section.audioFile),
+                                        child: Container(
+                                          padding: const EdgeInsets.all(16),
+                                          decoration: BoxDecoration(
+                                            color: _lesson.textColor
+                                                .withOpacity(0.2),
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Image.asset(
+                                            'assets/images/ic_sound.png',
+                                            width: r.isDesktop ? 44 : 34,
+                                            height: r.isDesktop ? 44 : 34,
+                                            color: _lesson.textColor,
+                                            errorBuilder: (_, __, ___) =>
+                                                Icon(
+                                              Icons.volume_up,
+                                              color: _lesson.textColor,
+                                              size: r.isDesktop ? 44 : 34,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+
+                                      SizedBox(height: r.isDesktop ? 24 : 16),
+                                    ],
                                   ),
                                 ),
-
-                                SizedBox(height: r.isDesktop ? 28 : 20),
-
-                                // Speaker button – user taps to hear audio
-                                GestureDetector(
-                                  onTap: () => _audio.play(section.audioFile),
-                                  child: Container(
-                                    padding: const EdgeInsets.all(14),
-                                    decoration: BoxDecoration(
-                                      color:
-                                          _lesson.textColor.withOpacity(0.15),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(
-                                      Icons.volume_up_rounded,
-                                      color: _lesson.textColor,
-                                      size: r.isDesktop ? 44 : 36,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
                           );
                         },
@@ -177,13 +216,24 @@ class _IntroScreenState extends State<IntroScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      IconButton(
-                        onPressed: _currentPage > 0
+                      GestureDetector(
+                        onTap: _currentPage > 0
                             ? () => _goToPage(_currentPage - 1)
                             : null,
-                        icon: Icon(Icons.chevron_left,
-                            color: _lesson.textColor,
-                            size: r.isDesktop ? 40 : 32),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12, vertical: 8),
+                          child: Text(
+                            '‹',
+                            style: TextStyle(
+                              fontSize: r.isDesktop ? 36 : 28,
+                              color: _currentPage > 0
+                                  ? _lesson.textColor
+                                  : _lesson.textColor.withOpacity(0.3),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                       ),
                       ...List.generate(
                         totalPages,
@@ -199,13 +249,24 @@ class _IntroScreenState extends State<IntroScreen> {
                           ),
                         ),
                       ),
-                      IconButton(
-                        onPressed: _currentPage < totalPages - 1
+                      GestureDetector(
+                        onTap: _currentPage < totalPages - 1
                             ? () => _goToPage(_currentPage + 1)
                             : null,
-                        icon: Icon(Icons.chevron_right,
-                            color: _lesson.textColor,
-                            size: r.isDesktop ? 40 : 32),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12, vertical: 8),
+                          child: Text(
+                            '›',
+                            style: TextStyle(
+                              fontSize: r.isDesktop ? 36 : 28,
+                              color: _currentPage < totalPages - 1
+                                  ? _lesson.textColor
+                                  : _lesson.textColor.withOpacity(0.3),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
