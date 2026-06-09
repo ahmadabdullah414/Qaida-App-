@@ -1,82 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Qaida - Learn to Read the Quran">
 
-  <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="qaida_app">
+  <meta name="apple-mobile-web-app-title" content="Qaida">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>Qaida - Learn to Read the Quran</title>
   <link rel="manifest" href="manifest.json">
 
-  <!-- Arabic fonts loaded via CDN so they work on itch.io regardless of asset manifest -->
+  <!-- Preload the two fonts Flutter uses on first render so they are in
+       the browser cache before the engine paints anything. -->
+  <link rel="preload" as="font" type="font/truetype" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/muhammadmusaalbazi_regular.ttf">
+  <link rel="preload" as="font" type="font/truetype" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/comfortaa.ttf">
+
+  <!-- font-display:block keeps text invisible until the font arrives,
+       eliminating the mid-render swap glitch on itch.io. -->
   <style>
-    @font-face {
-      font-family: 'AlQalamQuran';
-      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/Al-Qalam-Quran-Publisher.ttf') format('truetype');
-      font-display: swap;
-    }
     @font-face {
       font-family: 'MuhammadMusaAlBazi';
       src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/muhammadmusaalbazi_regular.ttf') format('truetype');
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'AlMajeed';
-      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/al_majeed.ttf') format('truetype');
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'AlMushaf';
-      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/al_mushaf.ttf') format('truetype');
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'MuhammadiQuranic';
-      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/muhammadi_quranic.ttf') format('truetype');
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Naskh';
-      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/naskh.ttf') format('truetype');
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'QuranFont';
-      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/quran_font.ttf') format('truetype');
-      font-display: swap;
+      font-display: block;
     }
     @font-face {
       font-family: 'Comfortaa';
       src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/comfortaa.ttf') format('truetype');
-      font-display: swap;
+      font-display: block;
+    }
+    @font-face {
+      font-family: 'AlQalamQuran';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/Al-Qalam-Quran-Publisher.ttf') format('truetype');
+      font-display: block;
+    }
+    @font-face {
+      font-family: 'AlMajeed';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/al_majeed.ttf') format('truetype');
+      font-display: block;
+    }
+    @font-face {
+      font-family: 'AlMushaf';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/al_mushaf.ttf') format('truetype');
+      font-display: block;
+    }
+    @font-face {
+      font-family: 'MuhammadiQuranic';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/muhammadi_quranic.ttf') format('truetype');
+      font-display: block;
+    }
+    @font-face {
+      font-family: 'Naskh';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/naskh.ttf') format('truetype');
+      font-display: block;
+    }
+    @font-face {
+      font-family: 'QuranFont';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/quran_font.ttf') format('truetype');
+      font-display: block;
     }
   </style>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <script>
+    // Load Flutter only after all declared fonts are ready.
+    // This prevents the Arabic glyph-swap glitch that appears on itch.io
+    // when Flutter renders before the CDN font has arrived.
+    document.fonts.ready.then(function () {
+      var script = document.createElement('script');
+      script.src = 'flutter_bootstrap.js';
+      document.body.appendChild(script);
+    });
+  </script>
 </body>
 </html>
