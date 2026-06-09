@@ -68,7 +68,7 @@ class ImageCharacterCard extends StatelessWidget {
                       fontFamily: fontFamily,
                       fontSize: r.arabicImageSize,
                       color: Colors.black87,
-                      height: 1.4,
+                      height: 2.0,
                     ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,

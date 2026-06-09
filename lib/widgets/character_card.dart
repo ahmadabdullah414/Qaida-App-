@@ -68,7 +68,7 @@ class CharacterCard extends StatelessWidget {
           fontFamily: fontFamily,
           fontSize: fontSize,
           color: Colors.black87,
-          height: 1.4,
+          height: 2.0,
         ),
       ),
     );
@@ -86,7 +86,7 @@ class CharacterCard extends StatelessWidget {
           fontSize: fontSize,
           color: isHighlighted ? const Color(0xFFcc8800) : Colors.black87,
           fontWeight: isHighlighted ? FontWeight.bold : FontWeight.normal,
-          height: 1.4,
+          height: 2.0,
         ),
       ));
     }
