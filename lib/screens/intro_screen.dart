@@ -158,27 +158,27 @@ class _IntroScreenState extends State<IntroScreen> {
 
                                       SizedBox(height: r.isDesktop ? 24 : 16),
 
-                                      // Speaker button
+                                      // Speaker button — ic_sound.png already
+                                      // has its own orange circle, show as-is
                                       GestureDetector(
                                         onTap: () =>
                                             _audio.play(section.audioFile),
-                                        child: Container(
-                                          padding: const EdgeInsets.all(16),
-                                          decoration: BoxDecoration(
-                                            color: _lesson.textColor
-                                                .withOpacity(0.2),
-                                            shape: BoxShape.circle,
-                                          ),
-                                          child: Image.asset(
-                                            'assets/images/ic_sound.png',
-                                            width: r.isDesktop ? 44 : 34,
-                                            height: r.isDesktop ? 44 : 34,
-                                            color: _lesson.textColor,
-                                            errorBuilder: (_, __, ___) =>
-                                                Icon(
+                                        child: Image.asset(
+                                          'assets/images/ic_sound.png',
+                                          width: r.isDesktop ? 90 : 72,
+                                          height: r.isDesktop ? 90 : 72,
+                                          errorBuilder: (_, __, ___) =>
+                                              Container(
+                                            width: r.isDesktop ? 90 : 72,
+                                            height: r.isDesktop ? 90 : 72,
+                                            decoration: const BoxDecoration(
+                                              color: Color(0xFFFF9800),
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Icon(
                                               Icons.volume_up,
-                                              color: _lesson.textColor,
-                                              size: r.isDesktop ? 44 : 34,
+                                              color: Colors.white,
+                                              size: r.isDesktop ? 44 : 36,
                                             ),
                                           ),
                                         ),
