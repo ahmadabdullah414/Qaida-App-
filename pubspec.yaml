@@ -20,6 +20,9 @@ flutter:
     - assets/audio/
     - assets/images/
   fonts:
+    - family: AlQalamQuran
+      fonts:
+        - asset: assets/fonts/Al-Qalam-Quran-Publisher.ttf
     - family: AlMajeed
       fonts:
         - asset: assets/fonts/al_majeed.ttf

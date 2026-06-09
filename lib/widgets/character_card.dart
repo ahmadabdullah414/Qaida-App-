@@ -21,8 +21,7 @@ class CharacterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final r = R(context);
-    final String fontFamily =
-        item.customFont ? 'AlMajeed' : 'MuhammadMusaAlBazi';
+    const String fontFamily = 'AlQalamQuran';
     final Color cardColor =
         isSelected ? const Color(0xFFFDE302) : (backgroundColor ?? Colors.white);
     final double fontSize = isWord ? r.arabicWordSize : r.arabicCharSize;

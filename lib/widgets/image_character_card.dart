@@ -18,8 +18,7 @@ class ImageCharacterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final r = R(context);
-    final String fontFamily =
-        item.customFont ? 'AlMajeed' : 'MuhammadMusaAlBazi';
+    const String fontFamily = 'AlQalamQuran';
 
     return GestureDetector(
       onTap: onTap,
