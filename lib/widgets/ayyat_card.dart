@@ -17,7 +17,7 @@ class AyyatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final r = R(context);
-    const String fontFamily = 'MuhammadMusaAlBazi';
+    const String fontFamily = 'AlQalamQuran';
     final Color cardColor = isSelected ? const Color(0xFFFDE302) : Colors.white;
 
     return GestureDetector(
