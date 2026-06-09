@@ -29,8 +29,47 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>qaida_app</title>
+  <title>Qaida - Learn to Read the Quran</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Arabic fonts loaded via CDN so they work on itch.io regardless of asset manifest -->
+  <style>
+    @font-face {
+      font-family: 'MuhammadMusaAlBazi';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/muhammadmusaalbazi_regular.ttf') format('truetype');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'AlMajeed';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/al_majeed.ttf') format('truetype');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'AlMushaf';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/al_mushaf.ttf') format('truetype');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'MuhammadiQuranic';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/muhammadi_quranic.ttf') format('truetype');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Naskh';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/naskh.ttf') format('truetype');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'QuranFont';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/quran_font.ttf') format('truetype');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Comfortaa';
+      src: url('https://cdn.jsdelivr.net/gh/ahmadabdullah414/Qaida-App-@main/assets/fonts/comfortaa.ttf') format('truetype');
+      font-display: swap;
+    }
+  </style>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
