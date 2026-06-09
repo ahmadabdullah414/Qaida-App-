@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../models/character_item.dart';
 import '../utils/cdn_image.dart';
 import '../utils/responsive.dart';
@@ -18,7 +18,7 @@ class ImageCharacterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final r = R(context);
-    const String fontFamily = 'AlQalamQuran';
+    const String fontFamily = 'MuhammadMusaAlBazi';
 
     return GestureDetector(
       onTap: onTap,

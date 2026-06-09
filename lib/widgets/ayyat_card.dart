@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../models/character_item.dart';
 import '../utils/responsive.dart';
 
@@ -17,7 +17,7 @@ class AyyatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final r = R(context);
-    const String fontFamily = 'AlQalamQuran';
+    const String fontFamily = 'MuhammadMusaAlBazi';
     final Color cardColor = isSelected ? const Color(0xFFFDE302) : Colors.white;
 
     return GestureDetector(
