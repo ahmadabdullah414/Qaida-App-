@@ -9,6 +9,7 @@ import '../models/lesson.dart';
 import '../services/audio_player_service.dart';
 import '../services/prefs_service.dart';
 import '../utils/responsive.dart';
+import '../utils/cdn_image.dart';
 import '../widgets/character_card.dart';
 import '../widgets/ayyat_card.dart';
 import '../widgets/image_character_card.dart';
@@ -676,8 +677,8 @@ class _LessonScreenState extends State<LessonScreen> {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                'assets/images/${entry['image']}',
+              child: cdnImage(
+                entry['image'] as String,
                 fit: BoxFit.fitWidth,
                 errorBuilder: (_, __, ___) => Container(
                   height: 80,

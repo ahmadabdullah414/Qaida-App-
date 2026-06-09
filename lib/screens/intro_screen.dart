@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../data/lessons_data.dart';
 import '../models/lesson.dart';
 import '../services/audio_player_service.dart';
+import '../utils/cdn_image.dart';
 import '../utils/responsive.dart';
 import 'lesson_screen.dart';
 
@@ -100,6 +101,8 @@ class _IntroScreenState extends State<IntroScreen> {
                         itemCount: totalPages,
                         itemBuilder: (context, index) {
                           final section = sections[index];
+                          final isLesson1 = widget.lessonIndex == 0;
+                          final speakerSize = r.isDesktop ? 90.0 : 72.0;
                           return LayoutBuilder(
                             builder: (ctx, constraints) => SingleChildScrollView(
                               child: ConstrainedBox(
@@ -111,17 +114,29 @@ class _IntroScreenState extends State<IntroScreen> {
                                     children: [
                                       SizedBox(height: r.isDesktop ? 24 : 16),
 
-                                      // Image (optional)
-                                      if (section.imageFile != null) ...[
+                                      // Lesson 1 only: ic_molvi.png (teacher
+                                      // reading quran) — tappable to play audio
+                                      if (isLesson1) ...[
+                                        GestureDetector(
+                                          onTap: () => _audio.play(section.audioFile),
+                                          child: cdnImage(
+                                            'ic_molvi.png',
+                                            height: r.introImageHeight,
+                                            fit: BoxFit.contain,
+                                          ),
+                                        ),
+                                        SizedBox(height: r.isDesktop ? 16 : 12),
+                                      ],
+
+                                      // Intro image for other lessons (optional)
+                                      if (!isLesson1 && section.imageFile != null) ...[
                                         ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(12),
-                                          child: Image.asset(
-                                            'assets/images/${section.imageFile}',
+                                          child: cdnImage(
+                                            section.imageFile!,
                                             height: r.introImageHeight,
                                             fit: BoxFit.contain,
-                                            errorBuilder: (_, __, ___) =>
-                                                const SizedBox.shrink(),
                                           ),
                                         ),
                                         SizedBox(
@@ -158,19 +173,20 @@ class _IntroScreenState extends State<IntroScreen> {
 
                                       SizedBox(height: r.isDesktop ? 24 : 16),
 
-                                      // Speaker button — ic_sound.png already
-                                      // has its own orange circle, show as-is
+                                      // Speaker button — ic_sound.png (orange
+                                      // circle with speaker) shown for all lessons
                                       GestureDetector(
                                         onTap: () =>
                                             _audio.play(section.audioFile),
-                                        child: Image.asset(
-                                          'assets/images/ic_sound.png',
-                                          width: r.isDesktop ? 90 : 72,
-                                          height: r.isDesktop ? 90 : 72,
+                                        child: cdnImage(
+                                          'ic_sound.png',
+                                          width: speakerSize,
+                                          height: speakerSize,
+                                          fit: BoxFit.contain,
                                           errorBuilder: (_, __, ___) =>
                                               Container(
-                                            width: r.isDesktop ? 90 : 72,
-                                            height: r.isDesktop ? 90 : 72,
+                                            width: speakerSize,
+                                            height: speakerSize,
                                             decoration: const BoxDecoration(
                                               color: Color(0xFFFF9800),
                                               shape: BoxShape.circle,
@@ -178,7 +194,7 @@ class _IntroScreenState extends State<IntroScreen> {
                                             child: Icon(
                                               Icons.volume_up,
                                               color: Colors.white,
-                                              size: r.isDesktop ? 44 : 36,
+                                              size: speakerSize * 0.5,
                                             ),
                                           ),
                                         ),
@@ -301,13 +317,25 @@ class _IntroScreenState extends State<IntroScreen> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    child: Text(
-                      'Start Lesson',
-                      style: TextStyle(
-                        fontFamily: 'Comfortaa',
-                        fontSize: r.buttonTextSize,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        cdnImage(
+                          'ic_next_page.png',
+                          width: r.isDesktop ? 34 : 28,
+                          height: r.isDesktop ? 34 : 28,
+                          fit: BoxFit.contain,
+                        ),
+                        const SizedBox(width: 10),
+                        Text(
+                          'Start Lesson',
+                          style: TextStyle(
+                            fontFamily: 'Comfortaa',
+                            fontSize: r.buttonTextSize,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

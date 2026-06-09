@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/character_item.dart';
+import '../utils/cdn_image.dart';
 import '../utils/responsive.dart';
 
 class ImageCharacterCard extends StatelessWidget {
@@ -45,8 +46,8 @@ class ImageCharacterCard extends StatelessWidget {
               flex: 3,
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(4, 6, 4, 2),
-                child: Image.asset(
-                  'assets/images/${item.imageFile}',
+                child: cdnImage(
+                  item.imageFile!,
                   fit: BoxFit.contain,
                   errorBuilder: (_, __, ___) => const Icon(
                     Icons.image_not_supported,

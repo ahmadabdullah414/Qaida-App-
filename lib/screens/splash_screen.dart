@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/cdn_image.dart';
 import 'index_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -25,6 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final logoW = (size.width * 0.55).clamp(200.0, 420.0);
+    final logoH = (size.height * 0.22).clamp(100.0, 200.0);
 
     return Scaffold(
       backgroundColor: const Color(0xFF4A1880),
@@ -33,9 +35,10 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Quran Cube logo
-            Image.asset(
-              'assets/images/qurancube_logo.png',
+            cdnImage(
+              'qurancube_logo.png',
               width: logoW,
+              height: logoH,
               fit: BoxFit.contain,
               errorBuilder: (_, __, ___) => Text(
                 'Quran Cube',

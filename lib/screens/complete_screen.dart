@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../data/lessons_data.dart';
+import '../utils/cdn_image.dart';
 import '../utils/responsive.dart';
 import 'index_screen.dart';
 import 'intro_screen.dart';
@@ -18,12 +19,12 @@ class CompleteScreen extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset(
-            'assets/images/bg_lesson_complete.png',
+          cdnImage(
+            'bg_lesson_complete.png',
             fit: BoxFit.cover,
             errorBuilder: (_, __, ___) => Container(color: const Color(0xFF622698)),
           ),
-          Container(color: Colors.black.withOpacity(0.35)),
+          Container(color: Colors.black.withOpacity(0.20)),
           SafeArea(
             child: Center(
               child: ConstrainedBox(
@@ -33,10 +34,11 @@ class CompleteScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.star_rounded,
-                        color: const Color(0xFFFDE302),
-                        size: r.completeIconSize,
+                      // Star emoji — bg_lesson_complete.png already contains
+                      // the decorative image; just show a large star above text
+                      Text(
+                        '⭐',
+                        style: TextStyle(fontSize: r.completeIconSize),
                       ),
                       SizedBox(height: r.isDesktop ? 28 : 20),
                       Text(
