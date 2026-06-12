@@ -7,12 +7,14 @@ class ImageCharacterCard extends StatelessWidget {
   final CharacterItem item;
   final bool isSelected;
   final VoidCallback onTap;
+  final bool compact;
 
   const ImageCharacterCard({
     super.key,
     required this.item,
     required this.isSelected,
     required this.onTap,
+    this.compact = false,
   });
 
   @override
@@ -38,45 +40,20 @@ class ImageCharacterCard extends StatelessWidget {
             ),
           ],
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 3,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(4, 6, 4, 2),
-                child: cdnImage(
-                  item.imageFile!,
-                  fit: BoxFit.contain,
-                  errorBuilder: (_, __, ___) => const Icon(
-                    Icons.image_not_supported,
-                    color: Colors.grey,
-                  ),
-                ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(6),
+            child: cdnImage(
+              item.imageFile!,
+              width: compact ? r.arabicCharSize : null,
+              height: compact ? r.arabicCharSize : null,
+              fit: BoxFit.contain,
+              errorBuilder: (_, __, ___) => const Icon(
+                Icons.image_not_supported,
+                color: Colors.grey,
               ),
             ),
-            Expanded(
-              flex: 2,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: Text(
-                    item.name ?? '',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: fontFamily,
-                      fontSize: r.arabicImageSize,
-                      color: Colors.black87,
-                      height: 2.0,
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
