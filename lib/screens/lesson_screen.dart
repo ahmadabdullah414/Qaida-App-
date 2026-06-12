@@ -246,6 +246,9 @@ class _LessonScreenState extends State<LessonScreen> {
       return _buildScrollableCharGrid(_characters, r.charCols(), r);
     }
 
+    // Lesson 3 – Letter Positions with column headers
+    if (num == '3') return _buildLesson3(r);
+
     // Lessons 1-5
     if (['1', '2', '3', '4', '5'].contains(num)) {
       final cols = num == '5' ? 3 : r.charCols();
@@ -411,20 +414,23 @@ class _LessonScreenState extends State<LessonScreen> {
   ) {
     return Padding(
       padding: r.gridPadding,
-      child: GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: cols,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
-          childAspectRatio: 1.2,
-        ),
-        itemCount: items.length,
-        itemBuilder: (ctx, i) => ImageCharacterCard(
-          item: items[i],
-          isSelected: selectedIndex == i,
-          onTap: () => onTap(i),
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: cols,
+            crossAxisSpacing: 8,
+            mainAxisSpacing: 8,
+            childAspectRatio: r.wordAspect,
+          ),
+          itemCount: items.length,
+          itemBuilder: (ctx, i) => ImageCharacterCard(
+            item: items[i],
+            isSelected: selectedIndex == i,
+            onTap: () => onTap(i),
+          ),
         ),
       ),
     );
@@ -499,6 +505,66 @@ class _LessonScreenState extends State<LessonScreen> {
     );
   }
 
+  // ── Lesson 3 – Letter Positions ───────────────────────────────────────────
+
+  Widget _buildLesson3(R r) {
+    final items = _characters;
+    final cols = r.isDesktop ? 8 : 4;
+    const labels4 = ['End', 'Middle', 'Beginning', 'Alone'];
+    final headers = r.isDesktop ? [...labels4, ...labels4] : labels4;
+
+    return SingleChildScrollView(
+      child: Padding(
+        padding: r.gridPadding,
+        child: Column(
+          children: [
+            // Column headers
+            Row(
+              children: headers.map((h) => Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 6),
+                  child: Text(
+                    h,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Comfortaa',
+                      fontSize: r.labelSize,
+                      fontWeight: FontWeight.bold,
+                      color: _lesson.textColor,
+                    ),
+                  ),
+                ),
+              )).toList(),
+            ),
+            // Grid
+            Directionality(
+              textDirection: TextDirection.rtl,
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: cols,
+                  crossAxisSpacing: 6,
+                  mainAxisSpacing: 6,
+                  childAspectRatio: r.charAspect,
+                ),
+                itemCount: items.length,
+                itemBuilder: (ctx, i) => CharacterCard(
+                  item: items[i],
+                  isSelected: _selChar == i,
+                  onTap: () {
+                    setState(() { _clearAll(); _selChar = i; });
+                    _audio.play(items[i].audioFile);
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   // ── Lesson 24 ──────────────────────────────────────────────────────────────
 
   Widget _buildLesson24(R r) {
@@ -514,22 +580,25 @@ class _LessonScreenState extends State<LessonScreen> {
           _buildSectionLabel('Tanween + Noon', r),
           Padding(
             padding: r.gridPadding,
-            child: GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: r.wordCols(),
-                crossAxisSpacing: 6, mainAxisSpacing: 6,
-                childAspectRatio: r.wordAspect,
-              ),
-              itemCount: w1.length,
-              itemBuilder: (ctx, i) => CharacterCard(
-                item: w1[i], isWord: true,
-                isSelected: _selChar == i,
-                onTap: () {
-                  setState(() { _clearAll(); _selChar = i; });
-                  _audio.play(w1[i].audioFile);
-                },
+            child: Directionality(
+              textDirection: TextDirection.rtl,
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: r.wordCols(),
+                  crossAxisSpacing: 6, mainAxisSpacing: 6,
+                  childAspectRatio: r.wordAspect,
+                ),
+                itemCount: w1.length,
+                itemBuilder: (ctx, i) => CharacterCard(
+                  item: w1[i], isWord: true,
+                  isSelected: _selChar == i,
+                  onTap: () {
+                    setState(() { _clearAll(); _selChar = i; });
+                    _audio.play(w1[i].audioFile);
+                  },
+                ),
               ),
             ),
           ),
@@ -537,34 +606,37 @@ class _LessonScreenState extends State<LessonScreen> {
           _buildSectionLabel('Noon Sakin', r),
           Padding(
             padding: r.gridPadding,
-            child: GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: r.wordCols(),
-                crossAxisSpacing: 6, mainAxisSpacing: 6,
-                childAspectRatio: r.wordAspect,
-              ),
-              itemCount: w2.length,
-              itemBuilder: (ctx, i) => CharacterCard(
-                item: w2[i], isWord: true,
-                isSelected: _selWord == i,
-                onTap: () {
-                  setState(() { _clearAll(); _selWord = i; });
-                  _audio.play(w2[i].audioFile);
-                },
+            child: Directionality(
+              textDirection: TextDirection.rtl,
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: r.wordCols(),
+                  crossAxisSpacing: 6, mainAxisSpacing: 6,
+                  childAspectRatio: r.wordAspect,
+                ),
+                itemCount: w2.length,
+                itemBuilder: (ctx, i) => CharacterCard(
+                  item: w2[i], isWord: true,
+                  isSelected: _selWord == i,
+                  onTap: () {
+                    setState(() { _clearAll(); _selWord = i; });
+                    _audio.play(w2[i].audioFile);
+                  },
+                ),
               ),
             ),
           ),
 
           _buildSectionLabel('Noon + Ba (IqLab)', r),
-          _buildImageGrid(w3, r.isDesktop ? 4 : (r.isTablet ? 3 : 3), _selWord2, (i) {
+          _buildImageGrid(w3, r.wordCols(), _selWord2, (i) {
             setState(() { _clearAll(); _selWord2 = i; });
             _audio.play(w3[i].audioFile);
           }, r),
 
           _buildSectionLabel('Idghaam Connection', r),
-          _buildImageGrid(w4, r.isDesktop ? 3 : 2, _selWord3, (i) {
+          _buildImageGrid(w4, r.wordCols(), _selWord3, (i) {
             setState(() { _clearAll(); _selWord3 = i; });
             _audio.play(w4[i].audioFile);
           }, r),
@@ -587,53 +659,19 @@ class _LessonScreenState extends State<LessonScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _buildSectionLabel('Silent Letters', r),
-          Padding(
-            padding: r.gridPadding,
-            child: GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: r.wordCols(),
-                crossAxisSpacing: 6, mainAxisSpacing: 6,
-                childAspectRatio: r.wordAspect,
-              ),
-              itemCount: w1.length,
-              itemBuilder: (ctx, i) => CharacterCard(
-                item: w1[i], isWord: true,
-                isSelected: _selChar == i,
-                onTap: () {
-                  setState(() { _clearAll(); _selChar = i; });
-                  _audio.play(w1[i].audioFile);
-                },
-              ),
-            ),
-          ),
+          _buildImageGrid(w1, r.wordCols(), _selChar, (i) {
+            setState(() { _clearAll(); _selChar = i; });
+            _audio.play(w1[i].audioFile);
+          }, r),
 
           _buildSectionLabel('Silent Alif (Ana)', r),
-          Padding(
-            padding: r.gridPadding,
-            child: GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: r.wordCols(),
-                crossAxisSpacing: 6, mainAxisSpacing: 6,
-                childAspectRatio: r.wordAspect,
-              ),
-              itemCount: w2.length,
-              itemBuilder: (ctx, i) => CharacterCard(
-                item: w2[i], isWord: true,
-                isSelected: _selWord == i,
-                onTap: () {
-                  setState(() { _clearAll(); _selWord = i; });
-                  _audio.play(w2[i].audioFile);
-                },
-              ),
-            ),
-          ),
+          _buildImageGrid(w2, r.wordCols(), _selWord, (i) {
+            setState(() { _clearAll(); _selWord = i; });
+            _audio.play(w2[i].audioFile);
+          }, r),
 
           _buildSectionLabel('Examples', r),
-          _buildImageGrid(w3, r.isDesktop ? 4 : 2, _selWord2, (i) {
+          _buildImageGrid(w3, r.wordCols(), _selWord2, (i) {
             setState(() { _clearAll(); _selWord2 = i; });
             _audio.play(w3[i].audioFile);
           }, r),
@@ -654,37 +692,37 @@ class _LessonScreenState extends State<LessonScreen> {
       itemBuilder: (ctx, i) {
         final entry = images[i];
         final isSel = _selImg == i;
+        final audios = (entry['audios'] as List).cast<String>();
         return GestureDetector(
           onTap: () {
             setState(() { _clearAll(); _selImg = i; });
-            _audio.play(entry['audio']);
+            _audio.playSequential(audios);
           },
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 150),
-            margin: const EdgeInsets.only(bottom: 12),
+            margin: const EdgeInsets.only(bottom: 16),
+            padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(14),
               border: isSel
                   ? Border.all(color: const Color(0xFFFDE302), width: 3)
-                  : null,
+                  : Border.all(color: Colors.grey.shade200, width: 1),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.15),
+                  color: Colors.black.withOpacity(0.12),
                   blurRadius: 6,
                   offset: const Offset(0, 3),
                 ),
               ],
             ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: cdnImage(
-                entry['image'] as String,
-                fit: BoxFit.fitWidth,
-                errorBuilder: (_, __, ___) => Container(
-                  height: 80,
-                  color: Colors.grey.shade200,
-                  child: const Icon(Icons.image_not_supported),
-                ),
+            child: Image.asset(
+              'assets/images/${entry['image'] as String}',
+              fit: BoxFit.contain,
+              errorBuilder: (_, __, ___) => Container(
+                height: 80,
+                color: Colors.grey.shade100,
+                child: const Icon(Icons.image_not_supported, color: Colors.grey),
               ),
             ),
           ),

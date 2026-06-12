@@ -713,23 +713,23 @@ class LessonCharacters4 {
   ];
 
   static const List<CharacterItem> lesson25Words1 = [
-    CharacterItem(name: 'يَـٰبُشْرٰىى', audioFile: 'l25_96.mp3', customFont: true, highlightIndexes: [10, 11], imageFile: 'l25_w1.png'),
-    CharacterItem(name: 'وَامْرَأَتُهُ', audioFile: 'l25_94.mp3', customFont: true, highlightIndexes: [2]),
-    CharacterItem(name: 'اَللّٰهُ', audioFile: 'l25_92.mp3', customFont: true, highlightIndexes: [2]),
-    CharacterItem(name: 'اَلرِّبَا', audioFile: 'l25_90.mp3', customFont: true, highlightIndexes: [2]),
-    CharacterItem(name: 'أُولٰٓئِكَ', audioFile: 'l25_104.mp3', customFont: true, highlightIndexes: [2]),
-    CharacterItem(name: 'مِائَةَ', audioFile: 'l25_102.mp3', customFont: true, highlightIndexes: [2]),
-    CharacterItem(name: 'أَصَلٰوتُكَ', audioFile: 'l25_100.mp3', customFont: true, highlightIndexes: [6]),
-    CharacterItem(name: 'كَفَرُوا', audioFile: 'l25_98.mp3', customFont: true, highlightIndexes: [7]),
-    CharacterItem(name: 'قَالَ الرَّسُوْلُ', audioFile: 'l25_111.mp3', customFont: true, highlightIndexes: [5, 6, 7]),
-    CharacterItem(name: 'أَرَءَيْتَ الَّذِىْ', audioFile: 'l25_107.mp3', customFont: true, highlightIndexes: [11]),
+    CharacterItem(name: 'يَـٰبُشْرٰىى', audioFile: 'l25_96.mp3', imageFile: 'silent1.png'),
+    CharacterItem(name: 'وَامْرَأَتُهُ', audioFile: 'l25_94.mp3', imageFile: 'silent2.png'),
+    CharacterItem(name: 'اَللّٰهُ', audioFile: 'l25_92.mp3', imageFile: 'silent3.png'),
+    CharacterItem(name: 'اَلرِّبَا', audioFile: 'l25_90.mp3', imageFile: 'silent4.png'),
+    CharacterItem(name: 'أُولٰٓئِكَ', audioFile: 'l25_104.mp3', imageFile: 'silent5.png'),
+    CharacterItem(name: 'مِائَةَ', audioFile: 'l25_102.mp3', imageFile: 'silent6.png'),
+    CharacterItem(name: 'أَصَلٰوتُكَ', audioFile: 'l25_100.mp3', imageFile: 'silent7.png'),
+    CharacterItem(name: 'كَفَرُوا', audioFile: 'l25_98.mp3', imageFile: 'silent8.png'),
+    CharacterItem(name: 'قَالَ الرَّسُوْلُ', audioFile: 'l25_111.mp3', imageFile: 'silent9.png'),
+    CharacterItem(name: 'أَرَءَيْتَ الَّذِىْ', audioFile: 'l25_107.mp3', imageFile: 'silent10.png'),
   ];
 
   static const List<CharacterItem> lesson25Words2 = [
-    CharacterItem(name: 'أَنَا عَابِدٌ', audioFile: 'l25_128.mp3', customFont: true, highlightIndexes: [4]),
-    CharacterItem(name: 'أَنَا نَذِيْرٌ', audioFile: 'l25_126.mp3', customFont: true, highlightIndexes: [4]),
-    CharacterItem(name: 'أَنَا أَخُوْكَ', audioFile: 'l25_124.mp3', customFont: true, highlightIndexes: [4]),
-    CharacterItem(name: 'أَنَا أُحْىِ', audioFile: 'l25_122.mp3', customFont: true, highlightIndexes: [4]),
+    CharacterItem(name: 'أَنَا عَابِدٌ', audioFile: 'l25_128.mp3', imageFile: 'alif1.png'),
+    CharacterItem(name: 'أَنَا نَذِيْرٌ', audioFile: 'l25_126.mp3', imageFile: 'alif2.png'),
+    CharacterItem(name: 'أَنَا أَخُوْكَ', audioFile: 'l25_124.mp3', imageFile: 'alif3.png'),
+    CharacterItem(name: 'أَنَا أُحْىِ', audioFile: 'l25_122.mp3', imageFile: 'alif4.png'),
   ];
 
   static const List<CharacterItem> lesson25Words3 = [
@@ -810,20 +810,12 @@ class LessonCharacters4 {
     CharacterItem(name: 'مُسْتَقِيْمٍ○', audioFile: 'l27_2_73.mp3'),
   ];
 
-  static const List<Map<String, String>> lesson28Images = [
-    {'image': 'l28_a1.png', 'audio': 'l28_100.mp3'},
-    {'image': 'l28_a2.png', 'audio': 'l28_100.mp3'},
-    {'image': 'l28_a1_intro.png', 'audio': 'l28_97.mp3'},
-    {'image': 'l28_a3.png', 'audio': 'l28_100.mp3'},
-    {'image': 'l28_a4.png', 'audio': 'l28_117.mp3'},
-    {'image': 'l28_a4_intro.png', 'audio': 'l28_113.mp3'},
-    {'image': 'l28_a5.png', 'audio': 'l28_125.mp3'},
-    {'image': 'l28_a5_intro.png', 'audio': 'l28_121.mp3'},
-    {'image': 'l28_a6.png', 'audio': 'l28_133.mp3'},
-    {'image': 'l28_a7.png', 'audio': 'l28_133.mp3'},
-    {'image': 'l28_a7_intro.png', 'audio': 'l28_129.mp3'},
-    {'image': 'l28_a8.png', 'audio': 'l28_147.mp3'},
-    {'image': 'l28_a8_intro.png', 'audio': 'l28_145.mp3'},
+  static const List<Map<String, Object>> lesson28Images = [
+    {'image': '1.jpg', 'audios': ['l28_100.mp3', 'l28_97.mp3']},
+    {'image': '2.jpg', 'audios': ['l28_117.mp3', 'l28_113.mp3']},
+    {'image': '3.jpg', 'audios': ['l28_125.mp3', 'l28_121.mp3']},
+    {'image': '4.jpg', 'audios': ['l28_133.mp3', 'l28_129.mp3']},
+    {'image': '5.jpg', 'audios': ['l28_147.mp3', 'l28_145.mp3']},
   ];
 
   static const List<CharacterItem> lesson29Words = [
