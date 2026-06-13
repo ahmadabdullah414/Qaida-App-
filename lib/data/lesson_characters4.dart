@@ -82,7 +82,7 @@ class LessonCharacters4 {
     CharacterItem(name: 'شك', audioFile: 'l5_c3.mp3'),
     CharacterItem(name: 'مس', audioFile: 'l5_c4.mp3'),
     CharacterItem(name: 'كم', audioFile: 'l5_c5.mp3'),
-    CharacterItem(name: 'له', audioFile: 'l5_c6.mp3', customFont: true),
+    CharacterItem(name: 'له', audioFile: 'l5_c6.mp3', customFont: true, imageFile: 'l5_ha.png'),
     CharacterItem(name: 'تر', audioFile: 'l5_c7.mp3'),
     CharacterItem(name: 'لو', audioFile: 'l5_c8.mp3'),
     CharacterItem(name: 'تمش', audioFile: 'l5_c9.mp3'),
@@ -101,9 +101,9 @@ class LessonCharacters4 {
     CharacterItem(name: 'يبصط', audioFile: 'l5_c22.mp3'),
     CharacterItem(name: 'قرارا', audioFile: 'l5_c23.mp3'),
     CharacterItem(name: 'تولوا', audioFile: 'l5_c24.mp3'),
-    CharacterItem(name: 'رحمته', audioFile: 'l5_c25.mp3', customFont: true),
+    CharacterItem(name: 'رحمته', audioFile: 'l5_c25.mp3', customFont: true, imageFile: 'l5_rahmah.png'),
     CharacterItem(name: 'تذكرون', audioFile: 'l5_c26.mp3'),
-    CharacterItem(name: 'يتلونه', audioFile: 'l5_c27.mp3', customFont: true),
+    CharacterItem(name: 'يتلونه', audioFile: 'l5_c27.mp3', customFont: true, imageFile: 'l5_yatlu.png'),
     CharacterItem(name: 'يقتلون', audioFile: 'l5_c28.mp3'),
     CharacterItem(name: 'وجده', audioFile: 'l5_c29.mp3'),
     CharacterItem(name: 'سالك', audioFile: 'l5_c30.mp3'),
@@ -111,7 +111,7 @@ class LessonCharacters4 {
     CharacterItem(name: 'نتقبل', audioFile: 'l5_c32.mp3'),
     CharacterItem(name: 'فعلتم', audioFile: 'l5_c33.mp3'),
     CharacterItem(name: 'وللذين', audioFile: 'l5_c34.mp3'),
-    CharacterItem(name: 'ورسوله', audioFile: 'l5_c35.mp3', customFont: true),
+    CharacterItem(name: 'ورسوله', audioFile: 'l5_c35.mp3', customFont: true, imageFile: 'l5_warasuluhu.png'),
     CharacterItem(name: 'زوجت', audioFile: 'l5_c36.mp3'),
   ];
 
@@ -713,16 +713,16 @@ class LessonCharacters4 {
   ];
 
   static const List<CharacterItem> lesson25Words1 = [
-    CharacterItem(name: 'يَـٰبُشْرٰىى', audioFile: 'l25_96.mp3', imageFile: 'silent1.png'),
-    CharacterItem(name: 'وَامْرَأَتُهُ', audioFile: 'l25_94.mp3', imageFile: 'silent2.png'),
-    CharacterItem(name: 'اَللّٰهُ', audioFile: 'l25_92.mp3', imageFile: 'silent3.png'),
-    CharacterItem(name: 'اَلرِّبَا', audioFile: 'l25_90.mp3', imageFile: 'silent4.png'),
-    CharacterItem(name: 'أُولٰٓئِكَ', audioFile: 'l25_104.mp3', imageFile: 'silent5.png'),
-    CharacterItem(name: 'مِائَةَ', audioFile: 'l25_102.mp3', imageFile: 'silent6.png'),
-    CharacterItem(name: 'أَصَلٰوتُكَ', audioFile: 'l25_100.mp3', imageFile: 'silent7.png'),
-    CharacterItem(name: 'كَفَرُوا', audioFile: 'l25_98.mp3', imageFile: 'silent8.png'),
-    CharacterItem(name: 'قَالَ الرَّسُوْلُ', audioFile: 'l25_111.mp3', imageFile: 'silent9.png'),
-    CharacterItem(name: 'أَرَءَيْتَ الَّذِىْ', audioFile: 'l25_107.mp3', imageFile: 'silent10.png'),
+    CharacterItem(name: 'يَـٰبُشْرٰىى', audioFile: 'l25_96.mp3', imageFile: 'silent5.png'),
+    CharacterItem(name: 'وَامْرَأَتُهُ', audioFile: 'l25_94.mp3', imageFile: 'silent6.png'),
+    CharacterItem(name: 'اَللّٰهُ', audioFile: 'l25_92.mp3', imageFile: 'silent7.png'),
+    CharacterItem(name: 'اَلرِّبَا', audioFile: 'l25_90.mp3', imageFile: 'silent8.png'),
+    CharacterItem(name: 'أُولٰٓئِكَ', audioFile: 'l25_104.mp3', imageFile: 'silent9.png'),
+    CharacterItem(name: 'مِائَةَ', audioFile: 'l25_102.mp3', imageFile: 'silent10.png'),
+    CharacterItem(name: 'أَصَلٰوتُكَ', audioFile: 'l25_100.mp3', imageFile: 'silent1.png'),
+    CharacterItem(name: 'كَفَرُوا', audioFile: 'l25_98.mp3', imageFile: 'silent2.png'),
+    CharacterItem(name: 'قَالَ الرَّسُوْلُ', audioFile: 'l25_111.mp3', imageFile: 'silent3.png'),
+    CharacterItem(name: 'أَرَءَيْتَ الَّذِىْ', audioFile: 'l25_107.mp3', imageFile: 'silent4.png'),
   ];
 
   static const List<CharacterItem> lesson25Words2 = [
