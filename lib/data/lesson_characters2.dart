@@ -105,7 +105,7 @@ class LessonCharacters2 {
     CharacterItem(name: ' طَبَقٍ', audioFile: 'l11_w17.mp3'),
     CharacterItem(name: '  بِنَهَرٍ', audioFile: 'l11_w18.mp3'),
     CharacterItem(name: 'ثَمَرَةٍ', audioFile: 'l11_w19.mp3'),
-    CharacterItem(name: 'حَمِئَةٍ', audioFile: 'l11_w20.mp3', customFont: true),
+    CharacterItem(name: 'حَمِئَةٍ', audioFile: 'l11_w20.mp3', customFont: true, imageFile: 'l11_hamah.png'),
   ];
   static const List<CharacterItem> lesson12Characters = [
     CharacterItem(name: 'اٌ', audioFile: 'l12_c1.mp3'),
