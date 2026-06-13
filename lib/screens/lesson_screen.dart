@@ -371,15 +371,29 @@ class _LessonScreenState extends State<LessonScreen> {
             childAspectRatio: r.wordAspect,
           ),
           itemCount: items.length,
-          itemBuilder: (ctx, i) => CharacterCard(
-            item: items[i],
-            isWord: true,
-            isSelected: _selWord == i,
-            onTap: () {
-              setState(() { _clearAll(); _selWord = i; });
-              _audio.play(items[i].audioFile);
-            },
-          ),
+          itemBuilder: (ctx, i) {
+            final item = items[i];
+            if (item.imageFile != null) {
+              return ImageCharacterCard(
+                item: item,
+                isSelected: _selWord == i,
+                compact: true,
+                onTap: () {
+                  setState(() { _clearAll(); _selWord = i; });
+                  _audio.play(item.audioFile);
+                },
+              );
+            }
+            return CharacterCard(
+              item: item,
+              isWord: true,
+              isSelected: _selWord == i,
+              onTap: () {
+                setState(() { _clearAll(); _selWord = i; });
+                _audio.play(item.audioFile);
+              },
+            );
+          },
         ),
       ),
     );

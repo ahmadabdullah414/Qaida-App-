@@ -375,7 +375,7 @@ class LessonCharacters {
     CharacterItem(name: 'ذُكِرَ', audioFile: 'l8_w14.mp3'),
     CharacterItem(name: 'قُرِئَ', audioFile: 'l8_w15.mp3'),
     CharacterItem(name: 'يَضَعُ', audioFile: 'l8_w16.mp3'),
-    CharacterItem(name: 'مَعَهُ', audioFile: 'l8_w17.mp3', customFont: true),
+    CharacterItem(name: 'مَعَهُ', audioFile: 'l8_w17.mp3', customFont: true, imageFile: 'l8_mahu.png'),
     CharacterItem(name: 'نَذَرُ', audioFile: 'l8_w18.mp3'),
     CharacterItem(name: 'غَنَمُ', audioFile: 'l8_w19.mp3'),
     CharacterItem(name: 'تَضَعُ', audioFile: 'l8_w20.mp3'),
