@@ -22,31 +22,6 @@ class ImageCharacterCard extends StatelessWidget {
     final r = R(context);
     const String fontFamily = 'MuhammadMusaAlBazi';
 
-    if (compact) {
-      return GestureDetector(
-        onTap: onTap,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 150),
-          decoration: BoxDecoration(
-            color: isSelected ? const Color(0xFFFDE302).withOpacity(0.4) : Colors.transparent,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Center(
-            child: cdnImage(
-              item.imageFile!,
-              width: r.arabicCharSize,
-              height: r.arabicCharSize,
-              fit: BoxFit.contain,
-              errorBuilder: (_, __, ___) => const Icon(
-                Icons.image_not_supported,
-                color: Colors.grey,
-              ),
-            ),
-          ),
-        ),
-      );
-    }
-
     return GestureDetector(
       onTap: onTap,
       child: AnimatedContainer(
@@ -70,6 +45,8 @@ class ImageCharacterCard extends StatelessWidget {
             padding: const EdgeInsets.all(6),
             child: cdnImage(
               item.imageFile!,
+              width: compact ? r.arabicCharSize : null,
+              height: compact ? r.arabicCharSize : null,
               fit: BoxFit.contain,
               errorBuilder: (_, __, ___) => const Icon(
                 Icons.image_not_supported,
