@@ -306,6 +306,7 @@ class _LessonScreenState extends State<LessonScreen> {
                 return ImageCharacterCard(
                   item: item,
                   isSelected: _selChar == i,
+                  compact: true,
                   onTap: () {
                     setState(() { _clearAll(); _selChar = i; });
                     _audio.play(item.audioFile);
