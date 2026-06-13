@@ -242,12 +242,12 @@ class LessonCharacters2 {
     CharacterItem(name: 'بِتَابِعٍ', audioFile: 'l14_w11.mp3'),
     CharacterItem(name: 'بِجَهَالَةٍ', audioFile: 'l14_w12.mp3', customFont: true, imageFile: 'l14_bijahalatin.png'),
     CharacterItem(name: 'جَنَاحَكَ', audioFile: 'l14_w13.mp3'),
-    CharacterItem(name: 'خَصَاصَةٌ', audioFile: 'l14_w14.mp3', customFont: true, imageFile: 'l14_khasasah.png'),
+    CharacterItem(name: 'خَصَاصَةٌ', audioFile: 'l14_w14.mp3', customFont: true, imageFile: 'l14_khasasah.png', imageScale: 3.2),
     CharacterItem(name: 'لَصَادِقٌ', audioFile: 'l14_w15.mp3'),
     CharacterItem(name: 'تَحَاوُرَكُمَا', audioFile: 'l14_w16.mp3'),
     CharacterItem(name: 'وَمَاكَانَ', audioFile: 'l14_w17.mp3'),
     CharacterItem(name: 'نُدَاوِلُهَا', audioFile: 'l14_w18.mp3'),
     CharacterItem(name: 'وَرَاعِنَا', audioFile: 'l14_w19.mp3'),
-    CharacterItem(name: 'كَانَ عَاقِبَةُ', audioFile: 'l14_w20.mp3', customFont: true, imageFile: 'l14_kana.png'),
+    CharacterItem(name: 'كَانَ عَاقِبَةُ', audioFile: 'l14_w20.mp3', customFont: true, imageFile: 'l14_kana.png', imageScale: 3.2),
   ];
 }
