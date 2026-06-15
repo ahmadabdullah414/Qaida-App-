@@ -45,6 +45,18 @@ class AudioPlayerService {
     } catch (_) {}
   }
 
+  Future<void> playSequential(List<String> audioFiles) async {
+    for (final file in audioFiles) {
+      await play(file);
+      // Wait for the player to finish before playing the next
+      try {
+        await _player?.playerStateStream.firstWhere(
+          (s) => s.processingState == ProcessingState.completed,
+        );
+      } catch (_) {}
+    }
+  }
+
   Future<void> stop() async {
     try {
       await _player?.stop();

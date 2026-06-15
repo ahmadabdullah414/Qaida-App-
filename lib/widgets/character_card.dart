@@ -46,8 +46,11 @@ class CharacterCard extends StatelessWidget {
         ),
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(4),
-            child: _buildText(fontFamily, fontSize),
+            padding: const EdgeInsets.all(8),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: _buildText(fontFamily, fontSize),
+            ),
           ),
         ),
       ),
@@ -68,7 +71,6 @@ class CharacterCard extends StatelessWidget {
           fontFamily: fontFamily,
           fontSize: fontSize,
           color: Colors.black87,
-          height: 2.0,
         ),
       ),
     );
@@ -77,18 +79,23 @@ class CharacterCard extends StatelessWidget {
   Widget _buildHighlightedText(String text, String fontFamily, double fontSize) {
     final highlights = item.highlightIndexes!;
     final List<TextSpan> spans = [];
-    for (int i = 0; i < text.length; i++) {
+    int i = 0;
+    while (i < text.length) {
       final isHighlighted = highlights.contains(i);
+      int j = i + 1;
+      while (j < text.length && highlights.contains(j) == isHighlighted) {
+        j++;
+      }
       spans.add(TextSpan(
-        text: text[i],
+        text: text.substring(i, j),
         style: TextStyle(
           fontFamily: fontFamily,
           fontSize: fontSize,
           color: isHighlighted ? const Color(0xFFcc8800) : Colors.black87,
           fontWeight: isHighlighted ? FontWeight.bold : FontWeight.normal,
-          height: 2.0,
         ),
       ));
+      i = j;
     }
     return Directionality(
       textDirection: TextDirection.rtl,

@@ -38,12 +38,12 @@ class R {
   double sp(double base) => base * _scale;
 
   // Convenience sizes
-  double get arabicCharSize => sp(28);   // character grid cells
-  double get arabicWordSize => sp(22);   // word grid cells
-  double get arabicAyyatSize => sp(26);  // full-width ayyat rows
-  double get arabicImageSize => sp(18);  // image-card text
+  double get arabicCharSize => sp(52);   // character grid cells
+  double get arabicWordSize => sp(42);   // word grid cells
+  double get arabicAyyatSize => sp(46);  // full-width ayyat rows
+  double get arabicImageSize => sp(36);  // image-card text
   double get introTextSize  => sp(15);   // intro paragraph
-  double get introArabicSize => sp(30);  // arabic in intro
+  double get introArabicSize => sp(54);  // arabic in intro
   double get buttonTextSize  => sp(16);
   double get appBarTitleSize => sp(18);
   double get labelSize       => sp(13);
@@ -88,8 +88,8 @@ class R {
       );
 
   /// Card aspect ratios
-  double get charAspect => isPhone ? 1.0 : 1.1;
-  double get wordAspect => isPhone ? 1.8 : 2.0;
+  double get charAspect => isPhone ? 0.75 : 0.85;
+  double get wordAspect => isPhone ? 1.3 : 1.5;
 
   /// Index item height
   double get indexItemHeight => sp(52);
@@ -99,9 +99,9 @@ class R {
 
   /// Intro image height
   double get introImageHeight {
-    if (_w >= 960) return 260;
-    if (_w >= 600) return 220;
-    return 180;
+    if (_w >= 960) return 100;
+    if (_w >= 600) return 80;
+    return 65;
   }
 
   /// Complete icon size

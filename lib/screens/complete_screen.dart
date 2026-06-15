@@ -129,7 +129,7 @@ class CompleteScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(12)),
                           ),
                           child: Text(
-                            'Back to Index',
+                            'Back to Menu',
                             style: TextStyle(
                               fontFamily: 'Comfortaa',
                               fontSize: r.buttonTextSize,

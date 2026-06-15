@@ -55,7 +55,7 @@ class AyyatCard extends StatelessWidget {
               fontFamily: fontFamily,
               fontSize: r.arabicAyyatSize,
               color: Colors.black87,
-              height: 2.0,
+              height: 1.4,
             ),
           ),
         ),
