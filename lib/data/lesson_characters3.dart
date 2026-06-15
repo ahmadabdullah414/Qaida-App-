@@ -98,8 +98,8 @@ class LessonCharacters3 {
     CharacterItem(name: 'بِيَمِيْنِهٖ', audioFile: 'l16_w15.mp3', imageFile: 'l16_w15.png', imageScale: 2.6),
     CharacterItem(name: 'اِلٰى طَعَامِهٖ', audioFile: 'l16_w16.mp3', imageFile: 'l16_w16.png', imageScale: 2.6),
     CharacterItem(name: 'يُحْيٖ', audioFile: 'l16_w17.mp3', imageFile: 'l16_w17.png'),
-    CharacterItem(name: 'اُحْيٖ', audioFile: 'l16_w18.mp3', imageFile: 'l16_w18.png'),
-    CharacterItem(name: 'فَيُحْيٖ', audioFile: 'l16_w19.mp3', imageFile: 'l16_w19.png'),
+    CharacterItem(name: 'اُحْيٖ', audioFile: 'l16_w18.mp3', imageFile: 'l16_w18.png', imageScale: 1.7),
+    CharacterItem(name: 'فَيُحْيٖ', audioFile: 'l16_w19.mp3', imageFile: 'l16_w19.png', imageScale: 1.7),
     CharacterItem(name: 'نَسْتَحْيٖ', audioFile: 'l16_w20.mp3', imageFile: 'l16_w20.png'),
   ];
   static const List<CharacterItem> lesson17Characters = [
