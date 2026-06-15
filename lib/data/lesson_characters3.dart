@@ -256,8 +256,8 @@ class LessonCharacters3 {
     CharacterItem(name: 'لَمُوْسِعُوْنَ', audioFile: 'l19_w15.mp3', imageFile: 'l19_w15.png'),
     CharacterItem(name: 'يَدْرَءُوْنَ', audioFile: 'l19_w16.mp3', imageFile: 'l19_w16.png'),
     CharacterItem(name: 'اُوْتِيْنَا', audioFile: 'l19_w17.mp3'),
-    CharacterItem(name: 'يُجَاوِرُوْنَكَ', audioFile: 'l19_w18.mp3', imageFile: 'l19_w18.png'),
-    CharacterItem(name: 'فِيْهَالُوْطًا', audioFile: 'l19_w19.mp3', imageFile: 'l19_w19.png'),
+    CharacterItem(name: 'يُجَاوِرُوْنَكَ', audioFile: 'l19_w18.mp3', imageFile: 'l19_w18.png', imageScale: 2.6),
+    CharacterItem(name: 'فِيْهَالُوْطًا', audioFile: 'l19_w19.mp3', imageFile: 'l19_w19.png', imageScale: 2.6),
     CharacterItem(name: 'حِينَ تَقُوْمُ', audioFile: 'l19_w20.mp3'),
   ];
 }
