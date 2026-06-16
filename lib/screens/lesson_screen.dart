@@ -421,12 +421,23 @@ class _LessonScreenState extends State<LessonScreen> {
               childAspectRatio: r.wordAspect,
             ),
             itemCount: items.length,
-            itemBuilder: (ctx, i) => CharacterCard(
-              item: items[i],
-              isWord: true,
-              isSelected: selectedIndex == i,
-              onTap: () => onTap(i),
-            ),
+            itemBuilder: (ctx, i) {
+              final item = items[i];
+              if (item.imageFile != null) {
+                return ImageCharacterCard(
+                  item: item,
+                  isSelected: selectedIndex == i,
+                  compact: true,
+                  onTap: () => onTap(i),
+                );
+              }
+              return CharacterCard(
+                item: item,
+                isWord: true,
+                isSelected: selectedIndex == i,
+                onTap: () => onTap(i),
+              );
+            },
           ),
         ),
       ),
