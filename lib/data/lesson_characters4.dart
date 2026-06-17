@@ -721,8 +721,8 @@ class LessonCharacters4 {
     CharacterItem(name: 'مِائَةَ', audioFile: 'l25_102.mp3', imageFile: 'silent10.png', imageScale: 2.0),
     CharacterItem(name: 'أَصَلٰوتُكَ', audioFile: 'l25_100.mp3', imageFile: 'silent1.png', imageScale: 2.0),
     CharacterItem(name: 'كَفَرُوا', audioFile: 'l25_98.mp3', imageFile: 'silent2.png', imageScale: 2.0),
-    CharacterItem(name: 'قَالَ الرَّسُوْلُ', audioFile: 'l25_111.mp3', imageFile: 'silent3.png', imageScale: 2.0),
-    CharacterItem(name: 'أَرَءَيْتَ الَّذِىْ', audioFile: 'l25_107.mp3', imageFile: 'silent4.png', imageScale: 2.0),
+    CharacterItem(name: 'قَالَ الرَّسُوْلُ', audioFile: 'l25_111.mp3', imageFile: 'silent3.png', imageScale: 2.4),
+    CharacterItem(name: 'أَرَءَيْتَ الَّذِىْ', audioFile: 'l25_107.mp3', imageFile: 'silent4.png', imageScale: 2.4),
   ];
 
   static const List<CharacterItem> lesson25Words2 = [
