@@ -712,19 +712,19 @@ class _LessonScreenState extends State<LessonScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _buildSectionLabel('Silent Letters', r),
-          _buildImageGrid(w1, r.wordCols(), _selChar, (i) {
+          _buildWordGrid(w1, r.wordCols(), _selChar, (i) {
             setState(() { _clearAll(); _selChar = i; });
             _audio.play(w1[i].audioFile);
           }, r),
 
           _buildSectionLabel('Silent Alif (Ana)', r),
-          _buildImageGrid(w2, r.wordCols(), _selWord, (i) {
+          _buildWordGrid(w2, r.wordCols(), _selWord, (i) {
             setState(() { _clearAll(); _selWord = i; });
             _audio.play(w2[i].audioFile);
           }, r),
 
           _buildSectionLabel('Examples', r),
-          _buildImageGrid(w3, r.wordCols(), _selWord2, (i) {
+          _buildWordGrid(w3, r.wordCols(), _selWord2, (i) {
             setState(() { _clearAll(); _selWord2 = i; });
             _audio.play(w3[i].audioFile);
           }, r),

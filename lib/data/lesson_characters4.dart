@@ -713,30 +713,30 @@ class LessonCharacters4 {
   ];
 
   static const List<CharacterItem> lesson25Words1 = [
-    CharacterItem(name: 'يَـٰبُشْرٰىى', audioFile: 'l25_96.mp3', imageFile: 'silent5.png'),
-    CharacterItem(name: 'وَامْرَأَتُهُ', audioFile: 'l25_94.mp3', imageFile: 'silent6.png'),
-    CharacterItem(name: 'اَللّٰهُ', audioFile: 'l25_92.mp3', imageFile: 'silent7.png'),
-    CharacterItem(name: 'اَلرِّبَا', audioFile: 'l25_90.mp3', imageFile: 'silent8.png'),
-    CharacterItem(name: 'أُولٰٓئِكَ', audioFile: 'l25_104.mp3', imageFile: 'silent9.png'),
-    CharacterItem(name: 'مِائَةَ', audioFile: 'l25_102.mp3', imageFile: 'silent10.png'),
-    CharacterItem(name: 'أَصَلٰوتُكَ', audioFile: 'l25_100.mp3', imageFile: 'silent1.png'),
-    CharacterItem(name: 'كَفَرُوا', audioFile: 'l25_98.mp3', imageFile: 'silent2.png'),
-    CharacterItem(name: 'قَالَ الرَّسُوْلُ', audioFile: 'l25_111.mp3', imageFile: 'silent3.png'),
-    CharacterItem(name: 'أَرَءَيْتَ الَّذِىْ', audioFile: 'l25_107.mp3', imageFile: 'silent4.png'),
+    CharacterItem(name: 'يَـٰبُشْرٰىى', audioFile: 'l25_96.mp3', imageFile: 'silent5.png', imageScale: 1.6),
+    CharacterItem(name: 'وَامْرَأَتُهُ', audioFile: 'l25_94.mp3', imageFile: 'silent6.png', imageScale: 1.6),
+    CharacterItem(name: 'اَللّٰهُ', audioFile: 'l25_92.mp3', imageFile: 'silent7.png', imageScale: 1.6),
+    CharacterItem(name: 'اَلرِّبَا', audioFile: 'l25_90.mp3', imageFile: 'silent8.png', imageScale: 1.6),
+    CharacterItem(name: 'أُولٰٓئِكَ', audioFile: 'l25_104.mp3', imageFile: 'silent9.png', imageScale: 1.6),
+    CharacterItem(name: 'مِائَةَ', audioFile: 'l25_102.mp3', imageFile: 'silent10.png', imageScale: 1.6),
+    CharacterItem(name: 'أَصَلٰوتُكَ', audioFile: 'l25_100.mp3', imageFile: 'silent1.png', imageScale: 1.6),
+    CharacterItem(name: 'كَفَرُوا', audioFile: 'l25_98.mp3', imageFile: 'silent2.png', imageScale: 1.6),
+    CharacterItem(name: 'قَالَ الرَّسُوْلُ', audioFile: 'l25_111.mp3', imageFile: 'silent3.png', imageScale: 1.6),
+    CharacterItem(name: 'أَرَءَيْتَ الَّذِىْ', audioFile: 'l25_107.mp3', imageFile: 'silent4.png', imageScale: 1.6),
   ];
 
   static const List<CharacterItem> lesson25Words2 = [
-    CharacterItem(name: 'أَنَا عَابِدٌ', audioFile: 'l25_128.mp3', imageFile: 'alif1.png'),
-    CharacterItem(name: 'أَنَا نَذِيْرٌ', audioFile: 'l25_126.mp3', imageFile: 'alif2.png'),
-    CharacterItem(name: 'أَنَا أَخُوْكَ', audioFile: 'l25_124.mp3', imageFile: 'alif3.png'),
-    CharacterItem(name: 'أَنَا أُحْىِ', audioFile: 'l25_122.mp3', imageFile: 'alif4.png'),
+    CharacterItem(name: 'أَنَا عَابِدٌ', audioFile: 'l25_128.mp3', imageFile: 'alif1.png', imageScale: 1.6),
+    CharacterItem(name: 'أَنَا نَذِيْرٌ', audioFile: 'l25_126.mp3', imageFile: 'alif2.png', imageScale: 1.6),
+    CharacterItem(name: 'أَنَا أَخُوْكَ', audioFile: 'l25_124.mp3', imageFile: 'alif3.png', imageScale: 1.6),
+    CharacterItem(name: 'أَنَا أُحْىِ', audioFile: 'l25_122.mp3', imageFile: 'alif4.png', imageScale: 1.6),
   ];
 
   static const List<CharacterItem> lesson25Words3 = [
-    CharacterItem(name: 'لٰـكِنَّا', audioFile: 'l25_152.mp3', imageFile: 'l25_c1.png'),
-    CharacterItem(name: 'سَلَـٰسِلَا', audioFile: 'l25_150.mp3', imageFile: 'l25_c2.png'),
-    CharacterItem(name: 'وَمَلَا ئِهِ', audioFile: 'l25_148.mp3', imageFile: 'l25_c3.png'),
-    CharacterItem(name: 'لِيَبْلُوَا', audioFile: 'l25_146.mp3', imageFile: 'l25_c4.png'),
+    CharacterItem(name: 'لٰـكِنَّا', audioFile: 'l25_152.mp3', imageFile: 'l25_c1.png', imageScale: 1.6),
+    CharacterItem(name: 'سَلَـٰسِلَا', audioFile: 'l25_150.mp3', imageFile: 'l25_c2.png', imageScale: 1.6),
+    CharacterItem(name: 'وَمَلَا ئِهِ', audioFile: 'l25_148.mp3', imageFile: 'l25_c3.png', imageScale: 1.6),
+    CharacterItem(name: 'لِيَبْلُوَا', audioFile: 'l25_146.mp3', imageFile: 'l25_c4.png', imageScale: 1.6),
   ];
 
   static const List<CharacterItem> lesson26Words = [
