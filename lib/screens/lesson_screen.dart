@@ -657,30 +657,10 @@ class _LessonScreenState extends State<LessonScreen> {
           ),
 
           _buildSectionLabel('Noon Sakin', r),
-          Padding(
-            padding: r.gridPadding,
-            child: Directionality(
-              textDirection: TextDirection.rtl,
-              child: GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: r.wordCols(),
-                  crossAxisSpacing: 6, mainAxisSpacing: 6,
-                  childAspectRatio: r.wordAspect,
-                ),
-                itemCount: w2.length,
-                itemBuilder: (ctx, i) => CharacterCard(
-                  item: w2[i], isWord: true,
-                  isSelected: _selWord == i,
-                  onTap: () {
-                    setState(() { _clearAll(); _selWord = i; });
-                    _audio.play(w2[i].audioFile);
-                  },
-                ),
-              ),
-            ),
-          ),
+          _buildWordGrid(w2, r.wordCols(), _selWord, (i) {
+            setState(() { _clearAll(); _selWord = i; });
+            _audio.play(w2[i].audioFile);
+          }, r),
 
           _buildSectionLabel('Noon + Ba (IqLab)', r),
           _buildImageGrid(w3, r.wordCols(), _selWord2, (i) {
