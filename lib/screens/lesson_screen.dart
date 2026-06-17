@@ -488,26 +488,12 @@ class _LessonScreenState extends State<LessonScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                child: AyyatCard(
-                  item: items[left],
-                  isSelected: _selChar == left + offset,
-                  onTap: () {
-                    setState(() { _clearAll(); _selChar = left + offset; });
-                    _audio.play(items[left].audioFile);
-                  },
-                ),
+                child: _ayyatOrImageCard(items[left], left + offset, offset, items),
               ),
               const SizedBox(width: 8),
               Expanded(
                 child: right < items.length
-                    ? AyyatCard(
-                        item: items[right],
-                        isSelected: _selChar == right + offset,
-                        onTap: () {
-                          setState(() { _clearAll(); _selChar = right + offset; });
-                          _audio.play(items[right].audioFile);
-                        },
-                      )
+                    ? _ayyatOrImageCard(items[right], right + offset, offset, items)
                     : const SizedBox(),
               ),
             ],
@@ -518,14 +504,29 @@ class _LessonScreenState extends State<LessonScreen> {
     return ListView.builder(
       padding: const EdgeInsets.symmetric(vertical: 8),
       itemCount: items.length,
-      itemBuilder: (ctx, i) => AyyatCard(
-        item: items[i],
-        isSelected: _selChar == i + offset,
+      itemBuilder: (ctx, i) => _ayyatOrImageCard(items[i], i + offset, offset, items),
+    );
+  }
+
+  Widget _ayyatOrImageCard(CharacterItem item, int selIdx, int offset, List<CharacterItem> items) {
+    if (item.imageFile != null) {
+      return ImageCharacterCard(
+        item: item,
+        isSelected: _selChar == selIdx,
+        compact: true,
         onTap: () {
-          setState(() { _clearAll(); _selChar = i + offset; });
-          _audio.play(items[i].audioFile);
+          setState(() { _clearAll(); _selChar = selIdx; });
+          _audio.play(item.audioFile);
         },
-      ),
+      );
+    }
+    return AyyatCard(
+      item: item,
+      isSelected: _selChar == selIdx,
+      onTap: () {
+        setState(() { _clearAll(); _selChar = selIdx; });
+        _audio.play(item.audioFile);
+      },
     );
   }
 
