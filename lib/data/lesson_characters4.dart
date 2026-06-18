@@ -819,21 +819,21 @@ class LessonCharacters4 {
   ];
 
   static const List<CharacterItem> lesson29Words = [
-    CharacterItem(name: 'اَلْحَمْدُ لِلّٰهِ', audioFile: 'l29_15.mp3', imageFile: 'l29_w15.png', imageScale: 3.5),
+    CharacterItem(name: 'اَلْحَمْدُ لِلّٰهِ', audioFile: 'l29_15.mp3', imageFile: 'l29_w15.png', imageScale: 2.0),
     CharacterItem(name: 'فَاتَّخِذْهُ وَكِيْلًاِ', audioFile: 'l29_13.mp3'),
     CharacterItem(name: 'يٰۤاَبَانَا اسْتَغْفِرْ لَنَا ذُنُوْبَنَا', audioFile: 'l29_9.mp3'),
     CharacterItem(name: 'هُوَ الْـحَقَّ', audioFile: 'l29_23.mp3', customFont: true),
     CharacterItem(name: 'يُصَلِّيْ عَلَيْكُم', audioFile: 'l29_21.mp3'),
-    CharacterItem(name: 'فَاثْبُتُوْا وَاذْكُرُوا اللهَ كَثِيْرًا', audioFile: 'l29_17.mp3', imageFile: 'l29_w17.png', imageScale: 8.0),
-    CharacterItem(name: 'سُبْحٰنَهُ وَتَعٰلٰى', audioFile: 'l29_31.mp3', imageFile: 'l29_w31.png', imageScale: 3.5),
+    CharacterItem(name: 'فَاثْبُتُوْا وَاذْكُرُوا اللهَ كَثِيْرًا', audioFile: 'l29_17.mp3', imageFile: 'l29_w17.png', imageScale: 10.0),
+    CharacterItem(name: 'سُبْحٰنَهُ وَتَعٰلٰى', audioFile: 'l29_31.mp3', imageFile: 'l29_w31.png', imageScale: 2.0),
     CharacterItem(name: 'فَالْمُلْقِيٰتِ ذِكْرًا', audioFile: 'l29_29.mp3'),
     CharacterItem(name: 'لَا نُكَلِّفُ نَفْسًا اِلَّا وُسْعَهَا', audioFile: 'l29_25.mp3'),
     CharacterItem(name: 'عَلَّامُ الْغُيُوْبِ', audioFile: 'l29_39.mp3', customFont: true),
-    CharacterItem(name: 'وَاتَّقُوا اللهَ', audioFile: 'l29_37.mp3', imageFile: 'l29_w37.png', imageScale: 2.4),
+    CharacterItem(name: 'وَاتَّقُوا اللهَ', audioFile: 'l29_37.mp3', imageFile: 'l29_w37.png', imageScale: 3.5),
     CharacterItem(name: 'وَلَا نُضِيْعُ اَجْرَ الْمُحْسِنِيْنَ', audioFile: 'l29_33.mp3'),
     CharacterItem(name: 'اَلْمَلِكُ الْقُدُّوْسُ', audioFile: 'l29_47.mp3'),
     CharacterItem(name: 'هٰذِهٖ تَذْكِرَةٌ', audioFile: 'l29_45.mp3'),
-    CharacterItem(name: 'وَيَهْدِيْۤ إِلَيْهِ مَنْ اَنَابَ', audioFile: 'l29_41.mp3', imageFile: 'l29_w41.png', imageScale: 5.0),
+    CharacterItem(name: 'وَيَهْدِيْۤ إِلَيْهِ مَنْ اَنَابَ', audioFile: 'l29_41.mp3', imageFile: 'l29_w41.png', imageScale: 3.0),
     CharacterItem(name: 'وَهُوَ يُطْعِمُ', audioFile: 'l29_55.mp3'),
     CharacterItem(name: 'اَقِمِ الصَّلٰوةَ', audioFile: 'l29_53.mp3'),
     CharacterItem(name: 'ذٰلِكَ بِمَا قَدَّمَتْ اَيْدِيْكُمْ', audioFile: 'l29_49.mp3'),
@@ -845,7 +845,7 @@ class LessonCharacters4 {
     CharacterItem(name: 'وَفَوْقَ كُلِّ ذِيْ عِلْمٍ عَلِيْمٌ', audioFile: 'l29_65.mp3'),
     CharacterItem(name: 'يَهْدِى السَّبِيْلَ', audioFile: 'l29_79.mp3'),
     CharacterItem(name: 'وَالْقُرْاٰنِ الْحَكِيْمِ', audioFile: 'l29_77.mp3'),
-    CharacterItem(name: 'كَذٰلِكَ يَضْرِبُ اللهُ الْاَمْثَالَ', audioFile: 'l29_73.mp3', imageFile: 'l29_w73.png', imageScale: 5.5),
+    CharacterItem(name: 'كَذٰلِكَ يَضْرِبُ اللهُ الْاَمْثَالَ', audioFile: 'l29_73.mp3', imageFile: 'l29_w73.png', imageScale: 7.5),
   ];
 
   static const List<CharacterItem> lesson30p1Ayyat = [
