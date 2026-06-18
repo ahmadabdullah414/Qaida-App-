@@ -203,6 +203,8 @@ class _IntroScreenState extends State<IntroScreen> {
               padding: const EdgeInsets.all(4),
               child: cdnImage(
                 section.imageFile!,
+                width: r.introImageHeight - 8,
+                height: r.introImageHeight - 8,
                 fit: BoxFit.contain,
               ),
             ),
