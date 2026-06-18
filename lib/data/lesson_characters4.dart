@@ -805,7 +805,7 @@ class LessonCharacters4 {
     CharacterItem(name: 'سَمِيْعًاۢ بَصِيْرًا○', audioFile: 'l27_2_67.mp3'),
     CharacterItem(name: 'تَوَّابِيْنَ○', audioFile: 'l27_2_65.mp3'),
     CharacterItem(name: 'ضَآلِّيْنَ○', audioFile: 'l27_2_79.mp3'),
-    CharacterItem(name: 'اَلْقَارِعَةُ○', audioFile: 'l27_2_77.mp3', customFont: true),
+    CharacterItem(name: 'اَلْقَارِعَةُ○', audioFile: 'l27_2_77.mp3', imageFile: 'l27_2_w77.png', imageScale: 5.0),
     CharacterItem(name: 'رَحْمٰنِ○', audioFile: 'l27_2_75.mp3'),
     CharacterItem(name: 'مُسْتَقِيْمٍ○', audioFile: 'l27_2_73.mp3'),
   ];
