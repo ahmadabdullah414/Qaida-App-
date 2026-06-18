@@ -14,6 +14,29 @@ class AyyatCard extends StatelessWidget {
     required this.onTap,
   });
 
+  Widget _buildText(R r, String fontFamily) {
+    final raw = item.name ?? '';
+    const circle = '○';
+    final idx = raw.indexOf(circle);
+    if (idx == -1) {
+      return Text(raw, textAlign: TextAlign.center,
+          style: TextStyle(fontFamily: fontFamily, fontSize: r.arabicAyyatSize, color: Colors.black87, height: 1.4));
+    }
+    final before = raw.substring(0, idx);
+    final after  = raw.substring(idx + 1);
+    return RichText(
+      textAlign: TextAlign.center,
+      text: TextSpan(
+        style: TextStyle(fontFamily: fontFamily, fontSize: r.arabicAyyatSize, color: Colors.black87, height: 1.4),
+        children: [
+          if (after.isNotEmpty) TextSpan(text: after),
+          TextSpan(text: circle, style: TextStyle(fontSize: r.arabicAyyatSize * 0.55)),
+          if (before.isNotEmpty) TextSpan(text: before),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final r = R(context);
@@ -48,16 +71,7 @@ class AyyatCard extends StatelessWidget {
         ),
         child: Directionality(
           textDirection: TextDirection.rtl,
-          child: Text(
-            item.name ?? '',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: fontFamily,
-              fontSize: r.arabicAyyatSize,
-              color: Colors.black87,
-              height: 1.4,
-            ),
-          ),
+          child: _buildText(r, fontFamily),
         ),
       ),
     );

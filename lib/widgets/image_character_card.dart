@@ -26,6 +26,10 @@ class ImageCharacterCard extends StatelessWidget {
       onTap: onTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 150),
+        margin: compact ? null : EdgeInsets.symmetric(
+          horizontal: r.isDesktop ? 0 : 12,
+          vertical: 6,
+        ),
         decoration: BoxDecoration(
           color: isSelected ? const Color(0xFFFDE302) : Colors.white,
           borderRadius: BorderRadius.circular(10),
