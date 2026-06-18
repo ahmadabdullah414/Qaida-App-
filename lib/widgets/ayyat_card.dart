@@ -55,6 +55,7 @@ class AyyatCard extends StatelessWidget {
           horizontal: r.isDesktop ? 20 : 16,
           vertical: r.isDesktop ? 18 : 14,
         ),
+        alignment: Alignment.center,
         decoration: BoxDecoration(
           color: cardColor,
           borderRadius: BorderRadius.circular(12),
