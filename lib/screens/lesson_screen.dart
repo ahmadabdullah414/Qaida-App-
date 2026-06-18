@@ -789,23 +789,9 @@ class _LessonScreenState extends State<LessonScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           header('Surah Al-Kafirun'),
-          ...kafirun.asMap().entries.map((e) => AyyatCard(
-            item: e.value,
-            isSelected: _selChar == e.key,
-            onTap: () {
-              setState(() { _clearAll(); _selChar = e.key; });
-              _audio.play(e.value.audioFile);
-            },
-          )),
+          ...kafirun.asMap().entries.map((e) => _ayyatOrImageCard(e.value, e.key, 0, kafirun)),
           header('Surah Al-Ikhlas'),
-          ...ikhlas.asMap().entries.map((e) => AyyatCard(
-            item: e.value,
-            isSelected: _selWord == e.key,
-            onTap: () {
-              setState(() { _clearAll(); _selWord = e.key; });
-              _audio.play(e.value.audioFile);
-            },
-          )),
+          ...ikhlas.asMap().entries.map((e) => _ayyatOrImageCard(e.value, e.key + kafirun.length, 0, ikhlas)),
           const SizedBox(height: 8),
         ],
       ),
