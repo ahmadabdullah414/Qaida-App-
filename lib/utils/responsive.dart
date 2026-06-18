@@ -99,9 +99,9 @@ class R {
 
   /// Intro image height
   double get introImageHeight {
-    if (_w >= 960) return 100;
-    if (_w >= 600) return 80;
-    return 65;
+    if (_w >= 960) return 160;
+    if (_w >= 600) return 130;
+    return 110;
   }
 
   /// Complete icon size

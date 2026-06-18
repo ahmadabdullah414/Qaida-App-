@@ -243,7 +243,7 @@ class _LessonScreenState extends State<LessonScreen> {
 
     // Lesson 22 – chars only
     if (num == '22') {
-      return _buildScrollableCharGrid(_characters, r.charCols(), r);
+      return _buildScrollableCharGrid(_characters, 3, r);
     }
 
     // Lesson 3 – Letter Positions with column headers

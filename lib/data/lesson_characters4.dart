@@ -878,9 +878,9 @@ class LessonCharacters4 {
   ];
 
   static const List<CharacterItem> lesson30p2SurahIkhlas = [
-    CharacterItem(name: 'وَ لَمۡ يَکُنۡ لَّہٗ کُفُوًا اَحَدٌ', audioFile: 'l30_2_154.mp3', imageFile: 'l30_2_w154.png'),
+    CharacterItem(name: 'وَ لَمۡ يَکُنۡ لَّہٗ کُفُوًا اَحَدٌ', audioFile: 'l30_2_151.mp3', imageFile: 'l30_2_w154.png'),
     CharacterItem(name: 'اَللّٰہُ الصَّمَدُ', audioFile: 'l30_2_148.mp3', imageFile: 'l30_2_w148.png'),
     CharacterItem(name: 'لَمۡ يَلِدۡ وَ لَمۡ يُوۡلَدۡ', audioFile: 'l30_2_160.mp3'),
-    CharacterItem(name: 'قُلۡ هُوَ اللّٰہُ اَحَدٌ', audioFile: 'l30_2_151.mp3', imageFile: 'l30_2_w151.png'),
+    CharacterItem(name: 'قُلۡ هُوَ اللّٰہُ اَحَدٌ', audioFile: 'l30_2_154.mp3', imageFile: 'l30_2_w151.png'),
   ];
 }
