@@ -756,8 +756,8 @@ class LessonCharacters4 {
 
   static const List<CharacterItem> lesson27p1Words = [
     CharacterItem(name: 'هَبْ لِيْ حُكْمًا○', audioFile: 'l27_95.mp3'),
-    CharacterItem(name: 'وَيَهْدِيْ بِهِ كَثِيْرًا○', audioFile: 'l27_90.mp3', customFont: true),
-    CharacterItem(name: 'وَلَهُ الدِّيْنُ وَاصِبًا○', audioFile: 'l27_103.mp3', customFont: true),
+    CharacterItem(name: 'وَيَهْدِيْ بِهِ كَثِيْرًا○', audioFile: 'l27_90.mp3', imageFile: 'l27_w90.png', imageScale: 5.0),
+    CharacterItem(name: 'وَلَهُ الدِّيْنُ وَاصِبًا○', audioFile: 'l27_103.mp3', imageFile: 'l27_w103.png', imageScale: 5.0),
     CharacterItem(name: 'وَفِيْ آذَانِهِمْ وَقْرًا○', audioFile: 'l27_98.mp3'),
     CharacterItem(name: 'مَسۡكَنِهِمۡ ايَةٌ○', audioFile: 'l27_119.mp3', imageFile: 'l27_w119.png', imageScale: 5.0),
     CharacterItem(name: 'وَرُسُلِهٖ○', audioFile: 'l27_115.mp3', imageFile: 'l27_w115.png', imageScale: 3.4),
