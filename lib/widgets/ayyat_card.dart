@@ -29,9 +29,9 @@ class AyyatCard extends StatelessWidget {
       text: TextSpan(
         style: TextStyle(fontFamily: fontFamily, fontSize: r.arabicAyyatSize, color: Colors.black87, height: 1.4),
         children: [
-          if (after.isNotEmpty) TextSpan(text: after),
-          TextSpan(text: circle, style: TextStyle(fontSize: r.arabicAyyatSize * 0.55)),
           if (before.isNotEmpty) TextSpan(text: before),
+          TextSpan(text: circle, style: TextStyle(fontSize: r.arabicAyyatSize * 0.55)),
+          if (after.isNotEmpty) TextSpan(text: after),
         ],
       ),
     );
