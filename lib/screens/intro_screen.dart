@@ -200,7 +200,7 @@ class _IntroScreenState extends State<IntroScreen> {
           ),
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(4),
               child: cdnImage(
                 section.imageFile!,
                 fit: BoxFit.contain,
