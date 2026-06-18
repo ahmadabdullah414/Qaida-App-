@@ -49,8 +49,8 @@ class ImageCharacterCard extends StatelessWidget {
             padding: const EdgeInsets.all(6),
             child: cdnImage(
               item.imageFile!,
-              width: compact ? r.arabicWordSize * item.imageScale : r.arabicAyyatSize * item.imageScale,
-              height: compact ? r.arabicWordSize * item.imageScale : r.arabicAyyatSize * item.imageScale,
+              width: compact ? r.arabicWordSize * item.imageScale : null,
+              height: compact ? r.arabicWordSize * item.imageScale : r.arabicAyyatSize * 1.5,
               fit: BoxFit.contain,
               errorBuilder: (_, __, ___) => const Icon(
                 Icons.image_not_supported,

@@ -509,7 +509,6 @@ class _LessonScreenState extends State<LessonScreen> {
   }
 
   Widget _ayyatOrImageCard(CharacterItem item, int selIdx, int offset, List<CharacterItem> items) {
-    final r = R(context);
     if (item.imageFile != null) {
       return ImageCharacterCard(
         item: item,
@@ -521,21 +520,13 @@ class _LessonScreenState extends State<LessonScreen> {
         },
       );
     }
-    final maxScale = items
-        .where((e) => e.imageFile != null)
-        .map((e) => e.imageScale)
-        .fold(0.0, (a, b) => a > b ? a : b);
-    final minH = maxScale > 0 ? r.arabicAyyatSize * maxScale + 12 : 0.0;
-    return ConstrainedBox(
-      constraints: BoxConstraints(minHeight: minH),
-      child: AyyatCard(
-        item: item,
-        isSelected: _selChar == selIdx,
-        onTap: () {
-          setState(() { _clearAll(); _selChar = selIdx; });
-          _audio.play(item.audioFile);
-        },
-      ),
+    return AyyatCard(
+      item: item,
+      isSelected: _selChar == selIdx,
+      onTap: () {
+        setState(() { _clearAll(); _selChar = selIdx; });
+        _audio.play(item.audioFile);
+      },
     );
   }
 
