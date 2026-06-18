@@ -859,7 +859,7 @@ class LessonCharacters4 {
     CharacterItem(name: 'وَ اجۡعَلۡنِيۡ مِنۡ وَّرَثَۃِ جَنَّۃِ النَّعِيۡمِ', audioFile: 'l30_160.mp3', customFont: true),
     CharacterItem(name: 'وَ لَا تُخۡزِنِيۡ يَوۡمَ يُبۡعَثُوۡنَ', audioFile: 'l30_16.mp3'),
     CharacterItem(name: 'يَوۡمَ لَا يَنۡفَعُ مَالٌ وَّ لَا بَنُوۡنَ', audioFile: 'l30_24.mp3'),
-    CharacterItem(name: 'اِلَّا مَنۡ اَتَي اللّٰہَ بِقَلۡبٍ سَلِيۡمٍ', audioFile: 'l30_32.mp3', customFont: true),
+    CharacterItem(name: 'اِلَّا مَنۡ اَتَي اللّٰہَ بِقَلۡبٍ سَلِيۡمٍ', audioFile: 'l30_32.mp3', imageFile: 'l30_w32.png', imageScale: 5.0),
     CharacterItem(name: 'وَ اُزۡلِفَتِ الۡجَنَّۃُ لِلۡمُتَّقِيۡنَ', audioFile: 'l30_40.mp3', customFont: true),
     CharacterItem(name: 'وَ بُرِّزَتِ الۡجَحِيۡمُ لِلۡغٰوِيۡنَ', audioFile: 'l30_48.mp3'),
     CharacterItem(name: 'وَ قِيۡلَ لَہُمۡ اَيۡنَمَا کُنۡتُمۡ تَعۡبُدُوۡنَ', audioFile: 'l30_56.mp3'),
